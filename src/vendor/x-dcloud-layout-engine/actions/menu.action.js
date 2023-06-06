@@ -9,7 +9,6 @@ import Vue from 'vue'
 // import i18n from '@/locale'
 export const GLOABL_MENU_ACTION = {
   TO_ROUTER: (engine, event) => {
-    debugger
     const { menu } = event
     let needRefresh = true
     if (engine.layoutConfig.keepAliveRouter) {
@@ -173,7 +172,6 @@ export const GLOABL_MENU_ACTION = {
     }
   },
   GO_LOGOUT: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击退出登录',
       type: 'success'

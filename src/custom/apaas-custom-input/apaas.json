@@ -1,0 +1,11 @@
+{
+  "entry": "index.js",
+  "copyAssets": ["public/custom/apaas-custom-input"],
+  "customWidgetList": [
+    {
+      "code": "FORM_CUSTOM_INPUT",
+      "text": "新版自开发文本输入"
+    }
+  ],
+  "outputName": "apaas-custom-input-web"
+}

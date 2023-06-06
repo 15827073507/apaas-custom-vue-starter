@@ -1,12 +1,12 @@
 <template>
   <div class="base-header">
     <div class="base-header__prefix">
-      <img class="base-header__logo" src="~@/assets/img/logo.png" />
+      <img class="base-header__logo" src="@/assets/img/logo.png" />
     </div>
     <div class="base-header__container">
       <slot></slot>
     </div>
-    <div class="base-header__suffix">
+    <div v-if="false" class="base-header__suffix">
       <slot name="append"></slot>
       <el-dropdown trigger="click" placement="bottom" @command="handleCommand">
         <person-avatar
@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     handleCommand(command) {
-      console.log(command)
       if (command === 'personal') {
         this.$router.push({ name: 'personal' })
       } else if (command === 'admin') {

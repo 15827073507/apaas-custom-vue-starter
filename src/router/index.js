@@ -12,6 +12,7 @@ import WorkbenchRouter from '@/pages/workbench/workbench.router'
 import AdminRouter from '@/pages/admin/admin.router'
 import PersonalRouter from '@/pages/personal/personal.router'
 import AccountRouter from '@/pages/account/account.router'
+import FormRouter from '@/pages/form/form.router'
 
 Vue.use(VueRouter)
 
@@ -23,7 +24,8 @@ const routes = [
   WorkbenchRouter,
   AdminRouter,
   PersonalRouter,
-  AccountRouter
+  AccountRouter,
+  FormRouter
 ]
 
 const router = new VueRouter({

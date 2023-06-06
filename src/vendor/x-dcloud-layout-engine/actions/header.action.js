@@ -5,7 +5,6 @@ import Vue from 'vue'
 // import store from '@/store'
 export const GLOABL_HEADER_ACTION = {
   GO_PRODUCT: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击跳转产品中心',
       type: 'success'
@@ -19,7 +18,6 @@ export const GLOABL_HEADER_ACTION = {
     // }
   },
   GO_PERSONAL: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击跳转个人中心',
       type: 'success'
@@ -35,21 +33,18 @@ export const GLOABL_HEADER_ACTION = {
     // }
   },
   GO_UPGRADE: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击跳转系统升级',
       type: 'success'
     })
   },
   GO_HELPER: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击跳转帮助文档',
       type: 'success'
     })
   },
   FONT_SIZE_SELECTED: (engine, event) => {
-    console.log(event)
     Vue.prototype.$message({
       message: '点击字体切换',
       type: 'success'

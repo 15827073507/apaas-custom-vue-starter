@@ -6,6 +6,7 @@
  * @Description: In User Settings Edit
  * @FilePath: /x-product-workspace/packages/x-project-app/src/main.js
  */
+import i18n from './locale'
 import './assets/scss/index.scss'
 import './vendor/extension-plugin'
 import Vue from 'vue'
@@ -13,7 +14,7 @@ import App from './App.vue'
 // import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import i18n from './locale'
+import './vendor/vconsole'
 import '@babel/polyfill'
 import './vendor/element-ui'
 import './vendor/x-lib-ui'
@@ -22,8 +23,14 @@ import './icons' // icon
 import './plugins'
 import './vendor/x-dcloud-layout-engine/x-dcloud-layout-engine'
 import './vendor/x-dcloud-list-engine/x-dcloud-list-engine'
+import './vendor/x-dcloud-page-engine/x-dcloud-page-engine'
+import './vendor/x-dcloud-ui'
+import './vendor/custom-load/index'
 
-Vue.prototype.$envUrl = function(url) {
+/** 注册logic */
+import './mixin/logic/index'
+
+Vue.prototype.$envUrl = function (url) {
   return `${process.env.VUE_APP_PUBLIC_PATH}${url}`
 }
 
@@ -33,11 +40,14 @@ Vue.config.productionTip = false
  * 开发用的
  */
 const requireContext = require.context('./custom/', true, /apaas.json$/)
-console.log(requireContext.keys())
 store.state.menuModule.customListViewMap = {}
 
 requireContext.keys().map(key => {
+  console.log('----------', key)
   const rc = requireContext(key)
+  if (key.includes('apaas-custom-hello')) {
+    return rc
+  }
   if (rc && rc.entry) {
     // 装载JS
     const entryJs = key.replace('apaas.json', rc.entry.replace('./', '')).replace('./', '')

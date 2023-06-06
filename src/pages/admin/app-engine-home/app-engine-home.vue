@@ -60,7 +60,6 @@ export default {
       this.layoutEngine.actionControl.executeActionWithSync('TO_ROUTER', { currentMenu })
     },
     showAddModal(data) {
-      console.log('menu-add-click', data)
       this.$message({
         message: 'menu-add-click',
         type: 'success'

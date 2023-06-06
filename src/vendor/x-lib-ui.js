@@ -58,10 +58,12 @@ import 'xx-vxe-table/lib/style.css'
 
 import XDcloudPageWeb from '@x-apaas/x-dcloud-page-web'
 import AssetsLoader from '@x-apaas/x-dcloud-page-web/lib/assets-loader'
-
+import Draggable from 'vuedraggable'
 Vue.use(XDcloudPageWeb)
 
 AssetsLoader.requireAllSvg()
+
+Vue.component('draggable', Draggable)
 
 Vue.use(VXETable)
 

@@ -21,12 +21,14 @@ import { SET_USER_INFO } from '@/store/auth.store'
 import BlackLayout from '@/layouts/black.layout'
 import DefaultLayout from '@/layouts/default.layout'
 import NoSidebarLayout from '@/layouts/no-sidebar.layout'
+import WhiteLayout from '@/layouts/white.layout'
 
 export default {
   components: {
     BlackLayout,
     DefaultLayout,
-    NoSidebarLayout
+    NoSidebarLayout,
+    WhiteLayout
   },
   data() {
     return {
@@ -34,7 +36,7 @@ export default {
   },
   computed: {
     layout() {
-      return this.$route.meta.layout || 'DefaultLayout'
+      return 'WhiteLayout' || this.$route.meta.layout || 'DefaultLayout'
     }
   },
   created() {

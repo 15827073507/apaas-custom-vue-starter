@@ -41,14 +41,13 @@ export default {
     }
   },
   created() {
-    console.log(this.$route)
     this.listEngine.actionControl.registerAction('LIST_CALC_TABLE_HEIGHT', this.calcTableMaxHeight)
   },
   methods: {
     calcTableMaxHeight(engine, event) {
       let calcStatus = false
       try {
-        debugger
+        
         const tableConfig = engine.listDataControl.tableConfig
         const searchPanelConfig = engine.listDataControl.searchPanelConfig || {}
         const subHeight = (event && event.subHeight) || (68 + 60 + 20 + 40)

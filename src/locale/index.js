@@ -13,20 +13,31 @@ import zhLocaleApp from '@/locale/lang/zh-CN/index.js'
 
 import ElementLocale from 'element-ui/lib/locale'
 
+import { loadModules, registerVueI18N } from '@x-apaas/x-apaas-frontend-i18n/index.js'
+
+const depenciesMessages = loadModules('platform-admin')
+
+const engineMessages = require('@x-apaas/x-apaas-frontend-i18n/x-dcloud-page-engine/index').default
+
 Vue.use(VueI18n)
 
 const messages = {
   'en': {
     ...enLocaleApp,
     ...enLocale, // 或者用 Object.assign({ message: 'hello' }, enLocale)
-    ...xlibEnLocale
+    ...xlibEnLocale,
+    ...depenciesMessages['en-US'],
+    ...engineMessages['en-US']
   },
   'zh-CN': {
     ...zhLocaleApp,
     ...zhLocale, // 或者用 Object.assign({ message: '您好' }, zhLocale)
-    ...xlibZhCNLocale
+    ...xlibZhCNLocale,
+    ...depenciesMessages['zh-CN'],
+    ...engineMessages['zh-CN']
   }
 }
+
 // Create VueI18n instance with optionsc
 const i18n = new VueI18n({
   locale: 'zh-CN', // set locale
@@ -35,4 +46,5 @@ const i18n = new VueI18n({
 
 ElementLocale.i18n((key, value) => i18n.t(key, value))
 
+registerVueI18N(i18n)
 export default i18n

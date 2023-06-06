@@ -88,7 +88,13 @@ export default {
           index: 'config-zikaifa',
           name: '自开发',
           icon: 'peizhiguanli',
-          children: []
+          children: [
+            {
+              index: 'formRender',
+              name: '自开发-表单构建',
+              icon: 'formBuild'
+            }
+          ]
         },
         {
           index: 'config-zikaifa-list-view',
@@ -119,10 +125,9 @@ export default {
     }
   },
   created() {
-    debugger
     this.menuData.forEach((menu) => {
       if (menu.index === 'config-zikaifa') {
-        menu.children = [...this.customMenuList]
+        menu.children = [...menu.children, ...this.customMenuList]
       }
       if (menu.index === 'config-zikaifa-list-view') {
         menu.children = [...this.customListViewList]

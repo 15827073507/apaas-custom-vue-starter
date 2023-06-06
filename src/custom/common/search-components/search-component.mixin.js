@@ -36,7 +36,6 @@ const SearchComponentMixin = {
         return this.searchValue
       },
       set: function (value) {
-        debugger
         this.$emit('change', value)
       }
     }

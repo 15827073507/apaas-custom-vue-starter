@@ -22,7 +22,6 @@ Vue.use(XRequestPlugin, {
   needShowMessage: true,
   businessErrorCatch: function(failRes, response, needShowMessage) {
     // 通用业务错误处理
-    // console.log(failRes, response, needShowMessage)
     if (failRes.code === 'error' && needShowMessage) {
       Vue.prototype.$message({
         message: failRes.message,
